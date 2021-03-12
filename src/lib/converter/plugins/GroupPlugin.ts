@@ -255,6 +255,9 @@ export class GroupPlugin extends ConverterComponent {
             if (a.name === b.name) {
                 return 0;
             }
+            if (a.kind === ReflectionKind.Property) {
+                return 0
+            }
             return a.name > b.name ? 1 : -1;
         } else {
             return aWeight - bWeight;
